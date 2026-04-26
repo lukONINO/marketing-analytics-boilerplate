@@ -67,7 +67,7 @@ Three loops in the system:
 
 - **Node 18+** (for the dashboard)
 - **Python 3.10+** (for the scripts)
-- **Peec AI account** — sign up at <https://peec.ai/>; install the [Peec MCP](https://github.com/peec-ai/peec-mcp) into your Claude Code session
+- **Peec AI account** — sign up at <https://peec.ai/>; install the peec ai MCP into your Claude Code session
 - **Google Cloud service account** with read access to your Search Console + GA4 properties (see `docs/google-credentials-setup.md`)
 - **Notion account** with the Notion MCP installed (see `docs/notion-setup.md`) — only needed if you want auto-generated weekly report pages
 
