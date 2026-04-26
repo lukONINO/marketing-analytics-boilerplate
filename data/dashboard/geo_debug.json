@@ -1,0 +1,21 @@
+{
+  "generated_at": null,
+  "domain": "acme.io",
+  "project_id": "or_REPLACE_WITH_YOUR_PROJECT_ID",
+  "window": null,
+  "summary": {
+    "total_prompts": 0,
+    "state_a": 0,
+    "state_b": 0,
+    "state_c": 0,
+    "state_d": 0,
+    "citeability_health_score": null
+  },
+  "prompts": [],
+  "by_cluster": {},
+  "action_groups": {
+    "p1_create_pages": [],
+    "p2_source_worthiness": [],
+    "p3_citeability": []
+  }
+}

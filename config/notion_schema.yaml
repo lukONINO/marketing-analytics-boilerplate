@@ -1,0 +1,27 @@
+# Notion configuration for the Marketing Reports database.
+#
+# Claude creates the database on first run via the daily-routine or
+# weekly-routine workflow, and writes the database_id back to this
+# file. Set parent_page_id to a page in your Notion workspace that
+# the Notion MCP integration has access to.
+
+marketing_reports:
+  # Parent page under which the Marketing Reports DB will live.
+  # Find the ID in the Notion URL: notion.so/<workspace>/Title-<id>
+  # The 32-char hex with dashes is the page_id.
+  parent_page_id: null
+  parent_page_title: null
+  parent_page_url: null
+
+  # Populated by Claude on first run. Do not edit by hand unless you
+  # need to recreate the DB.
+  database_id: null
+  database_url: null
+  data_source_id: null
+
+  # Human-readable DB title as it appears in Notion.
+  database_title: "Marketing Reports"
+
+  # Claude must verify the parent page is accessible to the Notion MCP
+  # integration before creating the DB. If the MCP can't see the page,
+  # re-share it to the integration in Notion's page settings.

@@ -1,0 +1,14 @@
+{
+  "fetched_at": "2026-04-21T08:00:00+00:00",
+  "source_url": "https://raw.githubusercontent.com/MalteBerlin/LLM-Referrer/main/llm-referrer.txt",
+  "source_commit": "0000000000000000000000000000000000000000",
+  "domain_count": 6,
+  "domains": [
+    {"domain": "chatgpt.com",       "provider": "OpenAI",            "type": "chat"},
+    {"domain": "chat.openai.com",   "provider": "OpenAI",            "type": "chat"},
+    {"domain": "claude.ai",         "provider": "Anthropic",         "type": "chat"},
+    {"domain": "perplexity.ai",     "provider": "Perplexity",        "type": "search"},
+    {"domain": "gemini.google.com", "provider": "Google Gemini",     "type": "chat"},
+    {"domain": "copilot.microsoft.com", "provider": "Microsoft Copilot", "type": "meta"}
+  ]
+}

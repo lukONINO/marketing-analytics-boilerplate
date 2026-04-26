@@ -1,0 +1,20 @@
+{
+  "date": "2026-04-20",
+  "fetched_at": "2026-04-21T07:05:00+00:00",
+  "property_id": "999999999",
+  "acquisition": [],
+  "pages": [],
+  "events": [],
+  "conversions": [],
+  "referrers": [
+    {"pageReferrer": "https://chatgpt.com/",                "sessions": 14, "totalUsers": 13},
+    {"pageReferrer": "https://chat.openai.com/",            "sessions": 3,  "totalUsers": 3},
+    {"pageReferrer": "https://www.perplexity.ai/search/x",  "sessions": 9,  "totalUsers": 8},
+    {"pageReferrer": "https://claude.ai/chat/abc",          "sessions": 5,  "totalUsers": 5},
+    {"pageReferrer": "https://copilot.microsoft.com/",      "sessions": 2,  "totalUsers": 2},
+    {"pageReferrer": "(not set)",                            "sessions": 99, "totalUsers": 88},
+    {"pageReferrer": "https://news.ycombinator.com/",        "sessions": 4,  "totalUsers": 4},
+    {"pageReferrer": "https://linkedin.com/in/example",      "sessions": 6,  "totalUsers": 6}
+  ],
+  "_errors": {}
+}

@@ -1,0 +1,124 @@
+# Topic clusters — bilingual replacement for tracked_topics.yaml
+# ========================================================================
+#
+# Each cluster represents a coherent slice of your GTM surface (a
+# product feature, an ICP, a regulatory theme, a buyer journey stage,
+# proof). Clusters are bilingual: the same cluster identity exists in
+# every language you serve, with language-specific GSC query patterns,
+# GA4 path patterns, and page URL globs. The Peec topic IDs are *not*
+# language-split — Peec prompts mix languages, and visibility/mentions
+# aggregate across them — so both lang rows within a cluster reference
+# the same peec_topic_ids.
+#
+# Pipeline behavior:
+#   - scripts/aggregate_daily.py expands each cluster into rows per
+#     (cluster, lang) with independent SEO + GA metrics and shared
+#     Peec metrics.
+#   - scripts/assign_clusters.py reads the scrape inventory and
+#     assigns each scraped URL to one cluster using URL pattern +
+#     language (from scraped <html lang>), writing
+#     data/processed/page_clusters.json.
+#
+# Editorial rules:
+#   1. Pattern regexes are case-insensitive via (?i).
+#   2. Path patterns are regex, not globs — escape dots as needed.
+#   3. Keep patterns broad enough to catch new pages automatically.
+#      The scraper adds page URLs to the inventory; if the cluster
+#      globs don't catch them, assign_clusters.py falls back to
+#      body-text keyword matching.
+#   4. When Peec adds a new topic, paste its id under the right
+#      cluster's peec_topic_ids within a week.
+#
+# This file ships with three generic example clusters. Replace them
+# with 5–15 clusters that match your business, then re-run
+# `python scripts/assign_clusters.py` to re-bucket your pages.
+
+clusters:
+  # ------------------------------------------------------------------
+  # 1. Product features
+  # ------------------------------------------------------------------
+  # The "what does the product do" cluster. Top-of-funnel feature
+  # discovery + product-page traffic.
+  - slug: product-features
+    names:
+      en: "Product Features"
+      de: "Produktfunktionen"
+    # Paste Peec topic IDs here once Peec has tracked prompts in this
+    # cluster for a few days. Find them via:
+    #   "list all peec topics" (in Claude Code with the Peec MCP loaded)
+    peec_topic_ids: []
+    gsc_query_patterns:
+      en:
+        - "(?i)acme features"
+        - "(?i)what does acme do"
+        - "(?i)acme product"
+      de:
+        - "(?i)acme funktionen"
+        - "(?i)was kann acme"
+    ga4_path_patterns:
+      en:
+        - "/product"
+        - "/features"
+        - "/blog/product-"
+      de:
+        - "/de/produkt"
+        - "/de/funktionen"
+
+  # ------------------------------------------------------------------
+  # 2. Industry use-cases
+  # ------------------------------------------------------------------
+  # The "I'm in industry X — does Acme work for me?" cluster.
+  # Mid-funnel evaluation; ICP-specific landing pages + case studies.
+  - slug: industry-use-cases
+    names:
+      en: "Industry Use-Cases"
+      de: "Anwendungsfälle"
+    peec_topic_ids: []
+    gsc_query_patterns:
+      en:
+        - "(?i)acme for"
+        - "(?i)use case"
+        - "(?i)case study"
+      de:
+        - "(?i)acme für"
+        - "(?i)anwendungsfall"
+        - "(?i)fallstudie"
+    ga4_path_patterns:
+      en:
+        - "/for/"
+        - "/solutions/"
+        - "/case-studies/"
+      de:
+        - "/de/fuer/"
+        - "/de/loesungen/"
+
+  # ------------------------------------------------------------------
+  # 3. Company & pricing
+  # ------------------------------------------------------------------
+  # Brand queries, pricing, about, demo-booking. BOFU-heavy: people
+  # already know who you are and want to commit.
+  - slug: company-and-pricing
+    names:
+      en: "Company & Pricing"
+      de: "Unternehmen & Preise"
+    peec_topic_ids: []
+    gsc_query_patterns:
+      en:
+        - "(?i)\\bacme\\b"
+        - "(?i)acme pricing"
+        - "(?i)acme demo"
+        - "(?i)about acme"
+      de:
+        - "(?i)\\bacme\\b"
+        - "(?i)acme preis"
+        - "(?i)acme demo"
+    ga4_path_patterns:
+      en:
+        - "^/$"
+        - "/about"
+        - "/pricing"
+        - "/book-a-demo"
+      de:
+        - "^/de/?$"
+        - "/de/preise"
+        - "/de/demo"

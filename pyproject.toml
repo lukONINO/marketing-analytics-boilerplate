@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "marketing-analytics-boilerplate"
+version = "0.1.0"
+description = "Claude-native marketing analytics pipeline (GSC + GA4 + Peec AI + LLM referrers → Notion + localhost dashboard)."
+requires-python = ">=3.10"
+readme = "README.md"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["."]

@@ -1,0 +1,7 @@
+{
+  "last_updated": null,
+  "source_mcp": "peec",
+  "schema_version": 1,
+  "_docstring": "Source-gap analysis per topic cluster. Populated by `source-gap-refresh.md` skill — runs Peec prompts × AI chats, finds external domains cited where the brand is absent. Empty until first run.",
+  "by_cluster": {}
+}

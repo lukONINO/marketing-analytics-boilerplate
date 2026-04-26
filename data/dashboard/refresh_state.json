@@ -1,0 +1,17 @@
+{
+  "status": "idle",
+  "started_at": null,
+  "completed_at": null,
+  "days_back": null,
+  "dates_processed": [],
+  "dates_failed": [],
+  "sources": {
+    "gsc": { "last_run_at": null, "latest_date": null, "days_back": null, "last_error": null },
+    "ga4": { "last_run_at": null, "latest_date": null, "days_back": null, "last_error": null },
+    "llm_traffic": { "last_run_at": null, "latest_date": null, "days_back": null, "last_error": null },
+    "aggregate": { "last_run_at": null, "latest_date": null, "days_back": null, "last_error": null }
+  },
+  "log_tail": [],
+  "peec_note": "Peec data is refreshed via Claude (MCP). Say: refresh peec data for last 7 days.",
+  "notion_note": "Notion writes happen during the daily/weekly Claude routines."
+}
